@@ -78,3 +78,5 @@ resource "aws_instance" "sydney" {
 output "instance_id_ap-southeast-2" {
   value = aws_instance.sydney.id
 }
+
+#hello
