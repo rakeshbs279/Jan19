@@ -3,7 +3,7 @@ Project Name : GR
 Date : Dec 23
 Modules : EC2_module
 Description : Build a New EC2 using the module EC2_Module
-Git Repo : 
+Git Repo : https://github.com/rakeshbs279/Jan19/tree/Project1 
 Future Enhancement
 
 
