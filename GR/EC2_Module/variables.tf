@@ -44,3 +44,30 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+variable "availability_zone" {
+  description = "The availability zone for the volume."
+ }
+
+variable "existing_volume_size" {
+  description = "Size of the existing EBS volume in GiB."
+}
+
+variable "existing_volume_type" {
+  description = "Type of the existing EBS volume (e.g., gp2, gp3)."
+}
+
+#ariable "existing_volume_name" {
+#  description = "Name tag for the existing EBS volume."
+#}
+
+variable "device_name" {
+  description = "The device name to expose to the instance (e.g., /dev/xvdf)."
+}
+
+variable "snapshot_name" {
+  description = "Name tag for the snapshot."
+}
+
+# variable "existing_volume_name1" {
+#   description = "Size of the existing EBS volume in GiB."
+# }

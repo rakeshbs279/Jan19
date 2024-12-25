@@ -13,3 +13,10 @@ output "private_ip" {
   description = "The private IP address of the EC2 instance"
   value       = aws_instance.ec2.private_ip
 }
+# output "ebs_volume_id" {
+#   value = aws_ebs_volume.example_volume.id
+# }
+
+output "ebs_snapshot_id" {
+  value = aws_ebs_snapshot.volume_snapshot.id
+ }
