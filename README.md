@@ -25,3 +25,10 @@ PS C:\Users\veerg\Documents\workspace\GR> history
   23 git push origin Project1
 
 Dec 24 : Rakesh
+
+Dec 25 : 
+Volume Snapshot creation for the exisiting Volume
+
+Next : Create S3 Bucket, Upload the logs to the S3 bucket
+Create file for the tfstate and backup 
+create cloudwatch to monitor CPU Performance for the exiting EC2
