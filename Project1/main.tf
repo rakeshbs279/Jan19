@@ -16,8 +16,9 @@ module "EC2_Module" {
   # availability_zone       = var.availability_zone
   existing_volume_size  = var.existing_volume_size
   existing_volume_type  = var.existing_volume_type
-  existing_volume_name  = var.existing_volume_name
+  existing_volume_name = var.existing_volume_name
   #existing_volume_id  = var.existing_volume_id
   device_name             = var.device_name
   snapshot_name           = var.snapshot_name
 }
+
