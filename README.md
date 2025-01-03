@@ -27,8 +27,53 @@ PS C:\Users\veerg\Documents\workspace\GR> history
 Dec 24 : Rakesh
 
 Dec 25 : 
-Volume Snapshot creation for the exisiting Volume
+Volume Snapshot creation for the Existing  Volume - Done 
+
+create cloudwatch to monitor CPU Performance for the exiting EC2
+
+
+Code for the S3 Actions - Prakash 
+
+{
+"Version": "2012-10-17",
+"Statement": [
+{
+"Effect": "Deny",
+"Principal": "*",
+"Action": "s3:*
+",
+"Resource": [
+"arn:aws:s3:::terraform-statefile-prakash",
+"arn:aws:s3:::terraform-statefile-prakash/*"
+],
+"Condition": {
+"StringNotEquals": {
+"aws:PrincipalArn": [
+"arn:aws:iam::124355674626:user/Terraform",
+"arn:aws:iam::124355674626:root"
+]
+}
+}
+}
+]
+}
+
+Notes : 
+
+Terraform Day1 : using the main module - > Update Bucket Policy , Change the KMS , Create Bucket
+
+1 Module for the work
+- Create a Project referering the module and update the below
+- Main.tf
+- backend.tf
+- Provider.tf
 
 Next : Create S3 Bucket, Upload the logs to the S3 bucket
 Create file for the tfstate and backup 
-create cloudwatch to monitor CPU Performance for the exiting EC2
+
+
+Service Model Comparison
+Service Model	Examples	What You Manage	What the Provider Manages
+IaaS (Infrastructure-as-a-Service)	EC2, S3	Virtual machines, storage, networking, OS	Hardware and virtualization
+PaaS (Platform-as-a-Service)	RDS, Elastic Beanstalk	Application logic, database content	Infrastructure, OS, platform updates, and scaling
+SaaS (Software-as-a-Service)	Gmail, Salesforce, Zoom	Only using the software's features	Everything, including the software and infrastructure

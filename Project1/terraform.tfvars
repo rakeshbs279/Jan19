@@ -8,9 +8,10 @@ security_groups = ["sg-03ff24b7c46b7994a"]
 # availability_zone       = "aps1-az1"
 existing_volume_size  = "8"
 existing_volume_type  = "gp2"
-existing_volume_name  = "vol-060e16c287e341810"
+existing_volume_name  = "vol-097f6bf243c8bf07f"
 device_name             = "/dev/xvda"
 snapshot_name           = "Project1-snapshot"
 tags = {
   Name = "My-EC2-Instance"
 }
+

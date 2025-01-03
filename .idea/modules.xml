@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GR.iml" filepath="$PROJECT_DIR$/GR.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RDS/RDS.iml" filepath="$PROJECT_DIR$/RDS/RDS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/S3_Module/S3_Module.iml" filepath="$PROJECT_DIR$/S3_Module/S3_Module.iml" />
     </modules>
   </component>
 </project>
