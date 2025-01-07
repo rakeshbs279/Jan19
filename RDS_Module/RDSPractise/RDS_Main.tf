@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 module "rds" {
-  source = "C:/Users/veerg/Documents/workspace/GR/RDS_Module"
+  source = "../rds-module"
 
   instance_class    = "db.t3.micro"
   allocated_storage = 20
@@ -24,3 +24,11 @@ module "rds" {
   #final_snapshot_identifier    = "mydb-final-snapshot-${timestamp()}"
 }
 
+resource "aws_security_group_rule" "allow_internal_rds" {
+  type              = "ingress"
+  from_port         = 5432
+  to_port           = 5432
+  protocol          = "tcp"
+  source_security_group_id = "sg-03ff24b7c46b7994a" # Self-reference
+  security_group_id        = "sg-03ff24b7c46b7994a"
+}

@@ -62,14 +62,14 @@ Notes :
 
 Terraform Day1 : using the main module - > Update Bucket Policy , Change the KMS , Create Bucket
 
-1 Module for the work
-- Create a Project referering the module and update the below
+1 Module for the work - Done 
+- Create a Project Referencing the module and update the below
 - Main.tf
 - backend.tf
 - Provider.tf
 
-Next : Create S3 Bucket, Upload the logs to the S3 bucket
-Create file for the tfstate and backup 
+Next : Create S3 Bucket, Upload the logs to the S3 bucket - Done
+Create file for the tfstate and backup - Pending
 
 
 Service Model Comparison
@@ -77,3 +77,64 @@ Service Model	Examples	What You Manage	What the Provider Manages
 IaaS (Infrastructure-as-a-Service)	EC2, S3	Virtual machines, storage, networking, OS	Hardware and virtualization
 PaaS (Platform-as-a-Service)	RDS, Elastic Beanstalk	Application logic, database content	Infrastructure, OS, platform updates, and scaling
 SaaS (Software-as-a-Service)	Gmail, Salesforce, Zoom	Only using the software's features	Everything, including the software and infrastructure
+
+Created S3 Bucket , Enabled Versioning - Done
+Versioning not working -- XX 
+Created a RDS module using the module and the project 
+RDS to Ec2 Connectivity - Done
+
+
+Install Post gres, Start service 
+Simple creation of table into the post gres
+[ec2-user@ip-172-31-0-37 ~]$ sudo -i -u postgres
+[postgres@ip-172-31-0-37 ~]$ psql
+psql (15.9)
+Type "help" for help.
+
+postgres=# CREATE DATABASE testdb;
+CREATE DATABASE
+postgres=# \c testdb
+You are now connected to database "testdb" as user "postgres".
+testdb=# CREATE TABLE employees (
+id SERIAL PRIMARY KEY,
+name VARCHAR(100),
+role VARCHAR(50)
+);
+CREATE TABLE
+testdb=# INSERT INTO employees (name, role) VALUES
+('John Doe', 'Engineer'),
+('Jane Smith', 'Manager'),
+('Sam Brown', 'Technician');
+INSERT 0 3
+testdb=# SELECT * FROM employees;
+id |    name    |    role    
+----+------------+------------
+1 | John Doe   | Engineer
+2 | Jane Smith | Manager
+3 | Sam Brown  | Technician
+(3 rows)
+
+testdb=# COMMIT;
+WARNING:  there is no transaction in progress
+COMMIT
+testdb=# SELECT * FROM employees;
+id |    name    |    role    
+----+------------+------------
+1 | John Doe   | Engineer
+2 | Jane Smith | Manager
+3 | Sam Brown  | Technician
+(3 rows)
+
+testdb=# 
+
+[postgres@ip-172-31-0-37 ~]$ telnet terraform-20250106112241503100000001.c5aci44aip24.ap-south-1.rds.amazonaws.com 5432
+Trying 172.31.24.102...
+Connected to terraform-20250106112241503100000001.c5aci44aip24.ap-south-1.rds.amazonaws.com.
+Escape character is '^]'.
+^CConnection closed by foreign host.
+
+
+Dec 7
+Write a module for EFS & EBS
+Write RDS and EC2 module
+plan, apply , destroy 
