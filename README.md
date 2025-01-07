@@ -134,7 +134,7 @@ Escape character is '^]'.
 ^CConnection closed by foreign host.
 
 
-Dec 7
-Write a module for EFS & EBS
-Write RDS and EC2 module
+Jan 7
+Write a module for EFS(Gokul) & EBS(Rakesh)
+Write RDS(rakesh) and EC2 module(Gokul)
 plan, apply , destroy 

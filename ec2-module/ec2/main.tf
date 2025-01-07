@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 module "EC2_Module" {
-  source           = "../GR/EC2_Module"
+  source           = "../EC2_Module"
   ami              = var.ami
   instance_type    = var.instance_type
   key_name         = var.key_name
